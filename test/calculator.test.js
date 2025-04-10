@@ -19,4 +19,10 @@ describe('Text Calculator', () => {
     expect(result).to.equal(17);
   });
 
+  
+  it ('Should return the total sum of multiple comma separated values', () => {
+    const result = add('10,7,10,20');
+    expect(result).to.equal(47);
+  });
+
 })
