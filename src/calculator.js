@@ -3,7 +3,6 @@ export function add (text) {
     return 0;
   };
 
-
   let pattern =  /,|\n/;
 
   if (text.startsWith('//')) {
@@ -12,9 +11,14 @@ export function add (text) {
     text = parts[1];
   }
 
+  const numbers = text.split(pattern).map((num) => Number(num))
+  const negativeList = numbers.filter(num => num < 0);
 
-  const numbers = text.split(pattern)
-  const total = numbers.reduce((acc, num) => (acc + Number(num)), 0);
+  if (negativeList.length) {
+    throw new Error(`negative numbers not allowed: ${negativeList.join(', ')}`);
+  }
+
+  const total = numbers.reduce((acc, num) => (acc + num), 0);
   return total;
 
 }

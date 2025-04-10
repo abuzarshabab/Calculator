@@ -36,5 +36,7 @@ describe('Text Calculator', () => {
     expect(result).to.equal(70);
   });
 
-
+  it ('Should throw an error with all negative values', () => {
+    expect(() => add('//;\n20;23;-21;40;-42')).to.throw('negative numbers not allowed: -21, -42');
+  });
 })
