@@ -3,4 +3,8 @@ export function add (text) {
     return 0
   }
 
+  if (Number(text)) {
+    return Number(text)
+  }
+
 }
