@@ -31,5 +31,10 @@ describe('Text Calculator', () => {
     expect(result).to.equal(47);
   });
 
+  it ('Should support custom single-character delimiters which will be defined at the beginning', () => {
+    const result = add('//;\n20;50');
+    expect(result).to.equal(70);
+  });
+
 
 })
