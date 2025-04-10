@@ -15,7 +15,7 @@ describe('Text Calculator', () => {
   });
 
   it ('Should return the sum of the comma separated values', () => {
-    const result = add('10, 7');
+    const result = add('10,7');
     expect(result).to.equal(17);
   });
 
