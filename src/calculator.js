@@ -7,7 +7,8 @@ export function add (text) {
     return Number(text);
   };
 
-  let [num1, num2] = text.split(',');
-  return Number(num1) + Number(num2);
+  let numbers = text.split(',');
+  let total = numbers.reduce((acc, num) => (acc + Number(num)), 0);
+  return total;
 
 }
