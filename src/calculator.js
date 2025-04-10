@@ -3,12 +3,18 @@ export function add (text) {
     return 0;
   };
 
-  if (Number(text)) {
-    return Number(text);
-  };
 
-  let numbers = text.split(/,|\n/);
-  let total = numbers.reduce((acc, num) => (acc + Number(num)), 0);
+  let pattern =  /,|\n/;
+
+  if (text.startsWith('//')) {
+    const parts = text.split('\n');
+    pattern = new RegExp(parts[0].slice(2))
+    text = parts[1];
+  }
+
+
+  const numbers = text.split(pattern)
+  const total = numbers.reduce((acc, num) => (acc + Number(num)), 0);
   return total;
 
 }
