@@ -9,8 +9,14 @@ describe('Text Calculator', () => {
     expect(result).to.equal(0)
   })
 
-  it('Should return the number itself when single value is passed', () => {
+  it ('Should return the number itself when single value is passed', () => {
     const result = add('7');
     expect(result).to.equal(7);
   });
+
+  it ('Should return the sum of the comma separated values', () => {
+    const result = add('10, 7');
+    expect(result).to.equal(17);
+  });
+
 })
