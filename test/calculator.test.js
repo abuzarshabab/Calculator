@@ -25,4 +25,11 @@ describe('Text Calculator', () => {
     expect(result).to.equal(47);
   });
 
+
+  it ('Should return the total sum of multiple comma and \n separated values', () => {
+    const result = add('10,7,10\n20');
+    expect(result).to.equal(47);
+  });
+
+
 })
